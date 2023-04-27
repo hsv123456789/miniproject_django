@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+
+    <style>
+  .card-body {
+    padding: 20px;
+    border-radius: 8px;
+
+  }
+
+  .file-input-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .file-input-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .file-input-wrapper .btn-file {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .file-input-wrapper .btn-file:hover {
+    background-color: #0069d9;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-control-file {
+    padding: 5px;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: #0069d9;
+  }
+</style>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/login.css'%}"
+    />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Logout</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="{% url 'ml_model' %}">ML model</a></li>
+      </ul>
+    </nav>
+     <div style="display:flex; justify-content:center;  "><h1>  upload the files  in the card below  </h1></div>
+   <div style="display:flex; justify-content:center; align-items:center; height:100vh;">
+
+
+      <div class="card ">
+  <div class="card-body">
+    <h5 class="card-title">Upload Files</h5>
+    <form enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="file1">File 1</label>
+        <input type="file" class="form-control-file" id="file1" name="file1" accept=".xlsx, .doc, .docx">
+      </div>
+      <div class="form-group">
+        <label for="file2">File 2</label>
+        <input type="file" class="form-control-file" id="file2" name="file2" accept=".xlsx, .doc, .docx">
+      </div>
+      <div class="form-group">
+        <label for="file3">File 3</label>
+        <input type="file" class="form-control-file" id="file3" name="file3" accept=".xlsx, .doc, .docx">
+      </div>
+      <button type="submit" class="btn ">Upload</button>
+    </form>
+  </div>
+</div>
+
+   </div>
+
+
+
+  </body>
+
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/login.css'%}"
+    />
+</head>
+<body>
+ <nav>
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">Logout</a></li>
+        <li><a href="#">Register</a></li>
+        <li><a href="#">ML model</a></li>
+      </ul>
+    </nav>
+
+
+<h1>The page for ml is working properly</h1>
+</body>
+</html>

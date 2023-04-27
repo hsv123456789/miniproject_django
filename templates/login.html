@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'styles/login.css'%}"
+    />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="card">
+        <form method="POST" action="{% url 'form_submit' %}">
+           {% csrf_token %}
+          <h2 class="card-title">Login</h2>
+          <div>
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="input-field"
+            />
+          </div>
+          <br />
+          <div>
+            <label for="password">password:</label>
+            <input type="password" name="password" class="input-field" />
+          </div>
+          <br />
+          <div class="buttons">
+            <button type="submit" class="btn"  onclick="navigateToAnotherPage1()">Login</button>
+           <a href="{% url 'register' %}" class="btn">Register</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+<script>
+   function navigateToAnotherPage() {
+    window.location.href = "{% url 'register' %}";
+  }
+  function navigateToAnotherPage1(){
+  window.location.href = "{% url 'home' %}";
+  }
+
+
+</script>
+
+</html>
